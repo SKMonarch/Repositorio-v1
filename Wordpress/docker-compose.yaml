@@ -1,0 +1,11 @@
+version: '3.8'  # Use an appropriate version of Docker Compose
+
+services:
+  php-fpm:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Assuming your Dockerfile is named Dockerfile
+    ports:
+      - "9000:9000"  # Map the container's port 9000 to the host
+
+# You can add other services like a web server (e.g., Nginx) here if needed.

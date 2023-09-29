@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  postgres:
+    image: imagen-postgres # Reemplaza por el nombre que desees para tu imagen PostgreSQL
+    container_name: mi-contenedor-postgresql # Cambia este nombre si lo deseas
+    environment:
+      POSTGRES_USER: myuser # Cambia el nombre de usuario y la contraseña según tus preferencias
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase # Cambia el nombre de la base de datos según tus preferencias
+    ports:
+      - "5432:5432" # Mapeo del puerto 5432 del host al contenedor PostgreSQL
+    volumes:
+      - /ruta/local/a/datos/postgresql:/var/lib/postgresql/data # Cambia la ruta local según tus preferencias
+    networks:
+      - mi-red-postgresql # Puedes crear tu propia red si lo deseas
+
+networks:
+  mi-red-postgresql:
